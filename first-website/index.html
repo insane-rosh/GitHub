@@ -2,9 +2,124 @@
 <html>
   <head>
     <title>My 1st Website</title>
+
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- Load D3.js from CDN -->
+      <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  
+      <style>
+      body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      }
+
+      .bar {
+      fill: steelblue;
+      }
+
+      .bar:hover {
+      fill: orange;
+      }
+
+      .axis text {
+      font-size: 12px;
+      }
+
+      .chart-title {
+      font-size: 20px;
+      font-weight: bold;
+      text-anchor: middle;
+      }
+    </style>
+  
+  
   </head>
+  
+
   <body>
     <h1>Hello World!!!!!</h1>
     <p>This is my very 1st website.</p ></p>
+
+
+    <h2>My Bar Chart</h2>
+      <div id="chart"></div>
+
+      <script>
+        const data = [
+          { name: "A", value: 1 },
+          { name: "B", value: 5 },
+          { name: "C", value: 8 },
+          { name: "D", value: 10 }
+        ];
+
+    // Chart dimensions
+        const width = 600;
+        const height = 350;
+        const margin = {
+          top: 20,
+          right: 30,
+          bottom: 45,
+          left: 45
+         };
+
+    const innerWidth = width - margin.left - margin.right;
+    const innerHeight = height - margin.top - margin.bottom;
+
+    // Create SVG canvas
+        const svg = d3.select("#chart")
+          .append("svg")
+          .attr("width", width)
+          .attr("height", height)
+          .attr("viewBox", `0 0 ${width} ${height}`);
+
+        const chart = svg.append("g")
+          .attr("transform",
+          `translate(${margin.left},${margin.top})`);
+
+    // X scale: categories
+        const x = d3.scaleBand()
+          .domain(data.map(d => d.name))
+          .range([0, innerWidth])
+          .padding(0.25);
+
+    // Y scale: values
+        const y = d3.scaleLinear()
+          .domain([0, d3.max(data, d => d.value)])
+          .nice()
+          .range([innerHeight, 0]);
+
+    // Draw bars
+        chart.selectAll(".bar")
+          .data(data)
+          .join("rect")
+          .attr("class", "bar")
+          .attr("x", d => x(d.name))
+          .attr("y", d => y(d.value))
+          .attr("width", x.bandwidth())
+          .attr("height", d => innerHeight - y(d.value));
+
+    // X axis
+        chart.append("g")
+          .attr("transform", `translate(0,${innerHeight})`)
+          .call(d3.axisBottom(x));
+
+    // Y axis
+        chart.append("g")
+          .call(d3.axisLeft(y));
+
+    // Value labels
+        chart.selectAll(".label")
+          .data(data)
+          .join("text")
+          .attr("class", "label")
+          .attr("x", d => x(d.name) + x.bandwidth() / 2)
+          .attr("y", d => y(d.value) - 6)
+          .attr("text-anchor", "middle")
+          .text(d => d.value);
+      </script>
+
   </body>
 </html>
+  
