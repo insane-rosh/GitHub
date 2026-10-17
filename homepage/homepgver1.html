@@ -89,6 +89,12 @@
         outline-offset: 4px;
       }
 
+      a {
+        color: var(--text);
+        text-decoration: none;
+        text-underline-offset: 5px;
+      }
+
       /* =================================
            2. PAGE CONTAINER
         ================================= */
@@ -241,6 +247,19 @@
       .vibrate:hover {
         display: inline-block;
         animation: vibrate 0.15s linear infinite;
+      }
+
+      .name:hover,
+      .name:focus-visible,
+      .name:active {
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        text-decoration-color: var(--accent);
+      }
+
+      .name:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 8px;
       }
 
       @keyframes vibrate {
@@ -431,7 +450,7 @@
     ================================== -->
 
     <header class="site-header container">
-      <h1>My not-so-first homepage. :)</h1>
+      <h1>Not my first homepage. :)</h1>
 
       <p class="tagline">
         Hover around with your cursor for some tiny elements of
@@ -498,9 +517,9 @@
             Hi, I'm
             <span class="hover-box">
               <span class="colour-hover large-name"
-                ><span class="hover-box">Roshni</span></span
-              >
-            </span>
+                ><span class="name">Roshni</span></span
+              ></span
+            >
             and since I was about 15, when public internet was launched in
             India, I've probably got some of the
             <span class="underline-hover"><em>best</em></span>
