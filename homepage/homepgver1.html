@@ -417,6 +417,11 @@
           transition-duration: 0.01ms !important;
         }
       }
+
+      .strike-hover:hover {
+        text-decoration: line-through;
+        text-decoration-color: yellow;
+      }
     </style>
   </head>
 
@@ -463,8 +468,6 @@
     <main>
       <section class="intro container" aria-label="About me">
         <div class="myphoto">
-          
-
           <img
             class="profile-photo"
             src="https://media.licdn.com/dms/image/v2/D4D03AQGUUvZs9yD_Hw/profile-displayphoto-scale_400_400/B4DaFE2xEIIoAg-/0/1792156570725?e=1793836800&v=beta&t=BnViYc-wmWwit4aKte5Qdb1bS98vds2lzmrSmVj9MWc"
@@ -494,10 +497,12 @@
           <p>
             Hi, I'm
             <span class="hover-box">
-              <span class="colour-hover large-name"><span class="hover-box">Roshni</span></span>
+              <span class="colour-hover large-name"
+                ><span class="hover-box">Roshni</span></span
+              >
             </span>
-            and since I was about 15, when public internet launched in India,
-            I've probably got some of the
+            and since I was about 15, when public internet was launched in
+            India, I've probably got some of the
             <span class="underline-hover"><em>best</em></span>
             Gmail IDs.. ;)
           </p>
@@ -538,7 +543,7 @@
           <h3>
             Pursuits that
             <span class="underline-hover">don't</span>
-            make me happy, yet I pursue them!
+            make me <span class="strike-hover">happy</span>, yet I pursue them!
           </h3>
 
           <ul>
@@ -585,7 +590,7 @@
         </em>
 
         <a
-          href="https://www.linkedin.com"
+          href="https://www.linkedin.com/in/roshnisen"
           target="_blank"
           rel="noopener noreferrer"
           >LinkedIn</a
