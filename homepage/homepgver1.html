@@ -1,391 +1,793 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+
     <title>Module-1 Project</title>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
-  </head>
+    <style>
+        /* =================================
+           1. GLOBAL SETTINGS
+        ================================= */
 
-  <style>
-    h1:hover {
-      text-decoration-line: underline;
-      text-decoration-style: wavy;
-      text-decoration-color: yellow;
-      text-underline-offset: 8px;
-    }
-
-    h3 {
-      color: white;
-    }
-
-    body {
-      background-color: rgb(0, 0, 0);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-    }
-
-    nav a:hover,
-    nav a:focus,
-    nav a:active {
-      text-decoration-line: underline;
-      text-decoration-style: wavy;
-      text-decoration-color: yellow;
-    }
-
-    .wvy {
-      color: white;
-      text-decoration: none;
-    }
-
-    .wvy:hover,
-    .wvy:focus,
-    .wvy:active {
-      text-decoration-line: underline;
-      text-decoration-style: wavy;
-      text-decoration-color: yellow;
-    }
-
-    .underline-hover:hover {
-      text-decoration: underline;
-    }
-
-    a {
-      color: white;
-      text-decoration: none;
-    }
-
-    a:hover,
-    a:focus,
-    a:active {
-      text-decoration-line: underline;
-      text-decoration-style: wavy;
-      text-decoration-color: yellow;
-    }
-    .hover-box {
-      display: inline-block;
-      padding: 4px;
-      border: 2px solid transparent;
-      cursor: pointer;
-    }
-
-    .profile-photo {
-      border: 2px solid transparent;
-    }
-
-    /* Highlight Roshni and the photo together */
-    body:has(.hover-box:hover) .hover-box {
-      border-color: yellow;
-    }
-
-    body:has(.hover-box:hover) .profile-photo {
-      border-color: yellow;
-    }
-
-    .vibrate:hover {
-      display: inline-block;
-      animation: vibrate 0.15s linear infinite;
-    }
-
-    @keyframes vibrate {
-      0% {
-        transform: translate(0);
-      }
-      25% {
-        transform: translate(-2px, 2px);
-      }
-      50% {
-        transform: translate(2px, -2px);
-      }
-      75% {
-        transform: translate(-2px, -2px);
-      }
-      100% {
-        transform: translate(2px, 2px);
-      }
-    }
-
-    .fade-in:hover {
-      opacity: 1;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-
-    .colour-hover {
-      color: white;
-      transition: color 0.3s ease;
-    }
-
-    .colour-hover:hover {
-      color: yellow;
-    }
-
-    .wave-line {
-      display: block;
-      width: 100%;
-      height: 40px;
-      cursor: crosshair;
-      overflow: visible;
-    }
-
-    .wave-path {
-      fill: none;
-      stroke: white;
-      stroke-width: 1.5;
-    }
-
-    td + td + td {
-      border-left: 0.5px solid white;
-    }
-
-    footer {
-      color: white;
-    }
-  </style>
-
-  <body>
-    <header>
-      <br /><br />
-      <h1 style="text-align: center; color: white">
-        My not-so-first homepage. :)
-      </h1>
-      <p style="text-align: center; color: lightgray; opacity: 0.6">
-        Hover around with your cursor for some tiny elements of
-        <span class="wvy"><span class="fade-in">SURPRISE</span></span
-        >! :)
-      </p>
-      <nav align="right" style="padding-right: 67px">
-        <a href="/">Home</a> | <a href="/Portfolio">Portfolio</a> |
-        <a href="/SERVICES">Services</a> | <a href="/BLOG">Blog</a> |
-      </nav>
-    </header>
-    <br />
-    <br />
-
-    <svg class="wave-line" viewBox="0 0 1000 40" preserveAspectRatio="none">
-      <path class="wave-path" d="M 0 20 H 1000" />
-    </svg>
-
-    <div style="padding-left: 40px">
-      <table style="border: none; border-collapse: collapse">
-        <tr style="border: none">
-          <td style="padding-top: 10px; background-color: black; border: none">
-            <div class="myphoto">
-              <span class="hover-word">Roshni</span>
-              <img
-                class="profile-photo"
-                src="https://media.licdn.com/dms/image/v2/D4D03AQGUUvZs9yD_Hw/profile-displayphoto-scale_400_400/B4DaFE2xEIIoAg-/0/1792156570725?e=1793836800&v=beta&t=BnViYc-wmWwit4aKte5Qdb1bS98vds2lzmrSmVj9MWc"
-                alt="That's how I look!"
-                width="300"
-                height="300"
-              />
-            </div>
-          </td>
-          <td
-            style="
-              padding-left: 20px;
-              padding-right: 20px;
-              background-color: black;
-              border: none;
-            "
-          >
-            <p style="color: white">
-              I've built a few first (<em
-                ><span class="vibrate">static</span></em
-              >) websites... <br />
-              <br />
-              My dad put me into coding courses when
-              <em>public internet</em> had just launched in India. But life
-              happened and sadly, I've no idea where those pieces of code are.
-              :( <br /><br />
-              In adult life, this is probably my second attempt to start afresh.
-              <br />
-              <br />
-              Hi, I'm
-              <span class="hover-box"
-                ><span class="colour-hover"
-                  ><span style="font-size: 32px">Roshni</span></span
-                ></span
-              >
-              and since I was about 15, when public internet launched in India,
-              I've probably got some of the
-              <span class="underline-hover"> <em> best</em></span>
-              gmail ids.. ;)
-            </p>
-          </td>
-
-          <td style="background-color: black; border: none">
-            <p>ababababababa</p>
-          </td>
-        </tr>
-      </table>
-    </div>
-
-    <div
-      style="
-        padding-left: 40px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        background-color: white;
-      "
-    >
-      <p align="center">
-        In an attempt to use some of the html tags that I've learnt in this
-        course, below are some lists which in all probability may not interest
-        you at all!
-      </p>
-    </div>
-    <br />
-    <div style="padding-left: 100px">
-      <table style="width: 60%; table-layout: fixed">
-        <tr>
-          <td></td>
-          <td>
-            <h3 style="padding-left: 40px">
-              Pursuits that make me <span class="colour-hover">happy</span> :)
-            </h3>
-          </td>
-          <td>
-            <h3 style="padding-left: 20px">
-              Pursuits that
-              <span class="underline-hover">don't </span>make me happy, yet I
-              pursue them!
-            </h3>
-          </td>
-        </tr>
-
-        <tr>
-          <td></td>
-          <td style="color: white">
-            <ul>
-              <li>Badminton</li>
-              <br />
-              <li>Music ( Listening, Playing and Singing)</li>
-              <br />
-              <li>Scrabble</li>
-            </ul>
-          </td>
-
-          <td style="color: white">
-            <ul>
-              <li>
-                Running. (I am a <em>half-marathoner</em> with
-                <em>flat</em> feet! )
-              </li>
-              <li>Vacuuming the house!</li>
-              <li>
-                Mollycuddling my furry son to go out on walks when he doesn't
-                want to go!
-              </li>
-            </ul>
-          </td>
-        </tr>
-      </table>
-    </div>
-    <hr style="border: none; height: 0.5px; background-color: white" />
-
-    <script>
-      document.querySelectorAll(".wave-line").forEach((svg) => {
-        const path = svg.querySelector(".wave-path");
-        const width = 1000;
-        const centerY = 20;
-        const amplitude = 5;
-        const frequency = 0.045;
-        const speed = 650;
-        const lifetime = 1.8;
-
-        let sources = [];
-        let lastX = null;
-        let lastTime = 0;
-        let animationId = null;
-
-        function addWave(event) {
-          const rect = svg.getBoundingClientRect();
-          const x = ((event.clientX - rect.left) / rect.width) * width;
-          const now = performance.now() / 1000;
-
-          // Start a fresh wave at each new cursor position.
-          if (lastX === null || Math.abs(x - lastX) >= 3) {
-            sources.push({ x, time: now });
-            lastX = x;
-            lastTime = now;
-          }
-
-          if (!animationId) {
-            animationId = requestAnimationFrame(draw);
-          }
+        :root {
+            --background: #000;
+            --text: #fff;
+            --muted: lightgray;
+            --accent: yellow;
+            --content-width: 1100px;
+            --page-padding: clamp(16px, 4vw, 48px);
         }
 
-        function draw() {
-          const now = performance.now() / 1000;
+        * {
+            box-sizing: border-box;
+        }
 
-          sources = sources.filter((source) => now - source.time < lifetime);
+        html {
+            scroll-behavior: smooth;
+        }
 
-          let d = "";
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--background);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            line-height: 1.65;
+        }
 
-          for (let x = 0; x <= width; x += 2) {
-            let y = centerY;
+        img,
+        svg {
+            max-width: 100%;
+        }
 
-            for (const source of sources) {
-              const distance = Math.abs(x - source.x);
-              const elapsed = now - source.time;
-              const travelled = elapsed * speed;
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
 
-              // Each wave expands in both directions.
-              const phase = travelled - distance;
+        h1 {
+            margin-bottom: 8px;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            line-height: 1.25;
+            text-align: center;
+        }
 
-              if (phase >= 0) {
-                const fade = Math.max(0, 1 - elapsed / lifetime);
+        h1:hover {
+            text-decoration-line: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: var(--accent);
+            text-underline-offset: 8px;
+        }
 
-                const front = Math.min(1, phase / 25);
+        h3 {
+            color: var(--text);
+            line-height: 1.4;
+        }
 
-                y += amplitude * Math.sin(phase * frequency) * front * fade;
-              }
+        a {
+            color: var(--text);
+            text-decoration: none;
+            text-underline-offset: 5px;
+        }
+
+        a:hover,
+        a:focus-visible,
+        a:active {
+            text-decoration-line: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: var(--accent);
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        /* =================================
+           2. PAGE CONTAINER
+        ================================= */
+
+        .container {
+            width: min(
+                calc(100% - 2 * var(--page-padding)),
+                var(--content-width)
+            );
+            margin-inline: auto;
+        }
+
+        /* =================================
+           3. HEADER AND NAVIGATION
+        ================================= */
+
+        .site-header {
+            padding-top: clamp(32px, 6vw, 72px);
+        }
+
+        .tagline {
+            margin-bottom: 20px;
+            color: var(--muted);
+            opacity: 0.7;
+            text-align: center;
+        }
+
+        .wvy {
+            color: var(--text);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .wvy:hover .fade-in,
+        .wvy:focus .fade-in {
+            opacity: 1;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px 24px;
+            padding: 12px 0 20px;
+        }
+
+        .main-nav a {
+            display: inline-block;
+            padding: 4px 0;
+        }
+
+        /* =================================
+           4. INTERACTIVE WAVE LINES
+        ================================= */
+
+        .wave-line {
+            display: block;
+            width: 100%;
+            height: 40px;
+            margin-block: 16px;
+            overflow: hidden;
+            cursor: crosshair;
+            touch-action: pan-y;
+        }
+
+        .wave-path {
+            fill: none;
+            stroke: var(--text);
+            stroke-width: 1.5;
+            vector-effect: non-scaling-stroke;
+        }
+
+        /* =================================
+           5. INTRODUCTION AND PROFILE
+        ================================= */
+
+        .intro {
+            display: grid;
+            grid-template-columns: minmax(180px, 300px) minmax(0, 1fr);
+            align-items: center;
+            gap: clamp(24px, 4vw, 48px);
+            padding-block: 24px 32px;
+        }
+
+        .myphoto {
+            text-align: center;
+        }
+
+        .hover-box {
+            display: inline-block;
+            padding: 4px;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .profile-photo {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin: 8px auto 0;
+            border: 2px solid transparent;
+            object-fit: cover;
+            transition: border-color 0.25s ease;
+        }
+
+        /* Highlight the name and photograph together. */
+
+        .myphoto:hover .hover-box,
+        .myphoto:focus-within .hover-box {
+            border-color: var(--accent);
+        }
+
+        .myphoto:hover .profile-photo,
+        .myphoto:focus-within .profile-photo {
+            border-color: var(--accent);
+        }
+
+        .intro-text {
+            min-width: 0;
+            overflow-wrap: anywhere;
+        }
+
+        .intro-text p {
+            margin-bottom: 20px;
+        }
+
+        .intro-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .large-name {
+            font-size: 2em;
+        }
+
+        .colour-hover {
+            color: var(--text);
+            transition: color 0.3s ease;
+        }
+
+        .colour-hover:hover {
+            color: var(--accent);
+        }
+
+        .underline-hover:hover {
+            text-decoration: underline;
+        }
+
+        .vibrate:hover {
+            display: inline-block;
+            animation: vibrate 0.15s linear infinite;
+        }
+
+        @keyframes vibrate {
+            0% {
+                transform: translate(0);
             }
 
-            d += `${x === 0 ? "M" : "L"} ${x} ${y} `;
-          }
+            25% {
+                transform: translate(-2px, 2px);
+            }
 
-          path.setAttribute("d", d);
+            50% {
+                transform: translate(2px, -2px);
+            }
 
-          if (sources.length > 0) {
-            animationId = requestAnimationFrame(draw);
-          } else {
-            path.setAttribute("d", `M 0 ${centerY} H ${width}`);
-            animationId = null;
-            lastX = null;
-          }
+            75% {
+                transform: translate(-2px, -2px);
+            }
+
+            100% {
+                transform: translate(2px, 2px);
+            }
         }
 
-        svg.addEventListener("pointermove", addWave);
+        /* =================================
+           6. WHITE INTRODUCTION STRIP
+        ================================= */
 
-        svg.addEventListener("pointerleave", () => {
-          lastX = null;
-        });
-      });
-    </script>
+        .list-intro {
+            margin-block: 20px;
+            padding: 18px var(--page-padding);
+            background-color: var(--text);
+            color: var(--background);
+            text-align: center;
+        }
 
-    <div style="padding-left: 0px">
-      <p align="center" , style="color: white">
-        <em
-          >If I haven't got you disinterested yet, feel free to connect with me
-          on</em
+        .list-intro p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* =================================
+           7. PERSONAL PURSUITS
+        ================================= */
+
+        .pursuits {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: clamp(24px, 5vw, 60px);
+            padding-block: 20px 32px;
+        }
+
+        .pursuits article {
+            min-width: 0;
+        }
+
+        .pursuits h3 {
+            margin-bottom: 14px;
+            font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+        }
+
+        .pursuits ul {
+            padding-left: 24px;
+        }
+
+        .pursuits li {
+            margin-bottom: 14px;
+            padding-left: 3px;
+        }
+
+        /* =================================
+           8. FOOTER
+        ================================= */
+
+        .site-footer {
+            padding-block: 20px 12px;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .site-footer p {
+            margin-bottom: 12px;
+        }
+
+        .copyright {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* =================================
+           9. TABLET RESPONSIVENESS
+        ================================= */
+
+        @media (max-width: 700px) {
+            .intro {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 24px;
+            }
+
+            .profile-photo {
+                max-width: 240px;
+            }
+
+            .intro-text {
+                max-width: 600px;
+                margin-inline: auto;
+            }
+
+            .pursuits {
+                gap: 24px;
+            }
+        }
+
+        /* =================================
+           10. MOBILE RESPONSIVENESS
+        ================================= */
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+                line-height: 1.65;
+            }
+
+            .site-header {
+                padding-top: 32px;
+            }
+
+            .main-nav {
+                gap: 8px 18px;
+                padding-bottom: 12px;
+            }
+
+            .wave-line {
+                height: 32px;
+                margin-block: 12px;
+            }
+
+            .intro {
+                padding-block: 16px 24px;
+            }
+
+            .large-name {
+                font-size: 1.6em;
+            }
+
+            .pursuits {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 18px;
+            }
+
+            .pursuits h3 {
+                margin-bottom: 10px;
+            }
+
+            .list-intro {
+                padding-block: 18px;
+            }
+        }
+
+        /* =================================
+           11. REDUCED MOTION ACCESSIBILITY
+        ================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body id="home">
+
+    <!-- =================================
+         HEADER
+    ================================== -->
+
+    <header class="site-header container">
+
+        <h1>My not-so-first homepage. :)</h1>
+
+        <p class="tagline">
+            Hover around with your cursor for some tiny elements of
+            <span class="wvy">
+                <span class="fade-in">SURPRISE</span>
+            </span>! :)
+        </p>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a href="/Portfolio">Portfolio</a>
+            <a href="/SERVICES">Services</a>
+            <a href="/BLOG">Blog</a>
+        </nav>
+
+    </header>
+
+    <!-- =================================
+         FIRST WAVE LINE
+    ================================== -->
+
+    <div class="container">
+        <svg
+            class="wave-line"
+            viewBox="0 0 1000 40"
+            preserveAspectRatio="none"
+            aria-hidden="true"
         >
-        <a href="https://www.linkedin.com" target="_blank">Linkedin</a>
-      </p>
+            <path class="wave-path" d="M 0 20 H 1000"></path>
+        </svg>
     </div>
 
-    <footer>
-      <p align="right" , style="padding-right: 67px">&copy; 2026 My Website</p>
+    <!-- =================================
+         PROFILE AND INTRODUCTION
+    ================================== -->
+
+    <main>
+
+        <section class="intro container" aria-label="About me">
+
+            <div class="myphoto">
+
+                <span class="hover-box">Roshni</span>
+
+                <img
+                    class="profile-photo"
+                    src="https://media.licdn.com/dms/image/v2/D4D03AQGUUvZs9yD_Hw/profile-displayphoto-scale_400_400/B4DaFE2xEIIoAg-/0/1792156570725?e=1793836800&v=beta&t=BnViYc-wmWwit4aKte5Qdb1bS98vds2lzmrSmVj9MWc"
+                    alt="That's how I look!"
+                    width="300"
+                    height="300"
+                    fetchpriority="high"
+                >
+
+            </div>
+
+            <div class="intro-text">
+
+                <p>
+                    I've built a few first
+                    (<em><span class="vibrate">static</span></em>)
+                    websites...
+                </p>
+
+                <p>
+                    My dad put me into coding courses when
+                    <em>public internet</em> had just launched in India.
+                    But life happened and sadly, I've no idea where those
+                    pieces of code are. :(
+                </p>
+
+                <p>
+                    In adult life, this is probably my second attempt
+                    to start afresh.
+                </p>
+
+                <p>
+                    Hi, I'm
+                    <span class="hover-box">
+                        <span class="colour-hover large-name">Roshni</span>
+                    </span>
+                    and since I was about 15, when public internet
+                    launched in India, I've probably got some of the
+                    <span class="underline-hover"><em>best</em></span>
+                    Gmail IDs.. ;)
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =================================
+             WHITE INTRODUCTION STRIP
+        ================================== -->
+
+        <section class="list-intro">
+
+            <p>
+                In an attempt to use some of the HTML tags that I've
+                learnt in this course, below are some lists which in
+                all probability may not interest you at all!
+            </p>
+
+        </section>
+
+        <!-- =================================
+             PERSONAL PURSUITS
+        ================================== -->
+
+        <section class="pursuits container"
+                 aria-label="My personal pursuits">
+
+            <article>
+
+                <h3>
+                    Pursuits that make me
+                    <span class="colour-hover">happy</span> :)
+                </h3>
+
+                <ul>
+                    <li>Badminton</li>
+                    <li>Music (Listening, Playing and Singing)</li>
+                    <li>Scrabble</li>
+                </ul>
+
+            </article>
+
+            <article>
+
+                <h3>
+                    Pursuits that
+                    <span class="underline-hover">don't</span>
+                    make me happy, yet I pursue them!
+                </h3>
+
+                <ul>
+                    <li>
+                        Running. (I am a
+                        <em>half-marathoner</em> with
+                        <em>flat</em> feet!)
+                    </li>
+
+                    <li>Vacuuming the house!</li>
+
+                    <li>
+                        Mollycuddling my furry son to go out on walks
+                        when he doesn't want to go!
+                    </li>
+                </ul>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- =================================
+         SECOND WAVE LINE
+    ================================== -->
+
+    <div class="container">
+        <svg
+            class="wave-line"
+            viewBox="0 0 1000 40"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+        >
+            <path class="wave-path" d="M 0 20 H 1000"></path>
+        </svg>
+    </div>
+
+    <!-- =================================
+         FOOTER
+    ================================== -->
+
+    <footer class="site-footer container">
+
+        <p>
+            <em>
+                If I haven't got you disinterested yet, feel free to
+                connect with me on
+            </em>
+
+            <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+            >LinkedIn</a>
+        </p>
+
+        <p class="copyright">
+            &copy; 2026 My Website
+        </p>
+
     </footer>
-  </body>
+
+    <!-- =================================
+         INTERACTIVE WAVE ANIMATION
+    ================================== -->
+
+    <script>
+        (() => {
+
+            const waveLines = document.querySelectorAll(".wave-line");
+
+            const reducedMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            );
+
+            if (reducedMotion.matches) {
+                return;
+            }
+
+            waveLines.forEach((svg) => {
+
+                const path = svg.querySelector(".wave-path");
+
+                const WIDTH = 1000;
+                const CENTER_Y = 20;
+                const AMPLITUDE = 5;
+                const FREQUENCY = 0.045;
+                const SPEED = 650;
+                const LIFETIME = 1.8;
+                const SAMPLE_STEP = 4;
+                const MAX_SOURCES = 80;
+
+                let sources = [];
+                let lastX = null;
+                let animationId = null;
+
+                function addWave(event) {
+
+                    // The effect is intended for a mouse,
+                    // not ordinary touchscreen scrolling.
+                    if (event.pointerType === "touch") {
+                        return;
+                    }
+
+                    const rect = svg.getBoundingClientRect();
+
+                    if (!rect.width) {
+                        return;
+                    }
+
+                    const x = (
+                        (event.clientX - rect.left) / rect.width
+                    ) * WIDTH;
+
+                    const now = performance.now() / 1000;
+
+                    // Create a new wave when the pointer moves
+                    // to a new position.
+                    if (
+                        lastX === null ||
+                        Math.abs(x - lastX) >= 3
+                    ) {
+
+                        sources.push({
+                            x: x,
+                            time: now
+                        });
+
+                        // Prevent too many simultaneous waves.
+                        if (sources.length > MAX_SOURCES) {
+                            sources.shift();
+                        }
+
+                        lastX = x;
+                    }
+
+                    if (animationId === null) {
+                        animationId = requestAnimationFrame(draw);
+                    }
+                }
+
+                function draw() {
+
+                    const now = performance.now() / 1000;
+
+                    // Remove expired wave sources.
+                    sources = sources.filter(
+                        source => now - source.time < LIFETIME
+                    );
+
+                    const points = [];
+
+                    // Draw the combined wave.
+                    for (
+                        let x = 0;
+                        x <= WIDTH;
+                        x += SAMPLE_STEP
+                    ) {
+
+                        let y = CENTER_Y;
+
+                        for (const source of sources) {
+
+                            const elapsed = now - source.time;
+                            const distance = Math.abs(x - source.x);
+                            const travelled = elapsed * SPEED;
+                            const phase = travelled - distance;
+
+                            // The wave travels outwards in both directions.
+                            if (phase >= 0) {
+
+                                const fade = Math.max(
+                                    0,
+                                    1 - elapsed / LIFETIME
+                                );
+
+                                const front = Math.min(
+                                    1,
+                                    phase / 25
+                                );
+
+                                y += AMPLITUDE
+                                    * Math.sin(phase * FREQUENCY)
+                                    * front
+                                    * fade;
+                            }
+                        }
+
+                        points.push(
+                            `${x === 0 ? "M" : "L"} ${x} ${y}`
+                        );
+                    }
+
+                    path.setAttribute("d", points.join(" "));
+
+                    if (sources.length > 0) {
+
+                        animationId = requestAnimationFrame(draw);
+
+                    } else {
+
+                        // Return to a straight horizontal line.
+                        path.setAttribute(
+                            "d",
+                            `M 0 ${CENTER_Y} H ${WIDTH}`
+                        );
+
+                        animationId = null;
+                        lastX = null;
+                    }
+                }
+
+                svg.addEventListener("pointermove", addWave);
+
+                svg.addEventListener("pointerleave", () => {
+                    lastX = null;
+                });
+
+            });
+
+        })();
+    </script>
+
+</body>
 </html>
