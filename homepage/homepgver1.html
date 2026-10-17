@@ -1,453 +1,446 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000000">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
 
     <title>Module-1 Project</title>
 
     <style>
-        /* =================================
+      /* =================================
            1. GLOBAL SETTINGS
         ================================= */
 
-        :root {
-            --background: #000;
-            --text: #fff;
-            --muted: lightgray;
-            --accent: yellow;
-            --content-width: 1100px;
-            --page-padding: clamp(16px, 4vw, 48px);
-        }
+      :root {
+        --background: #000;
+        --text: #fff;
+        --muted: lightgray;
+        --accent: yellow;
+        --content-width: 1100px;
+        --page-padding: clamp(16px, 4vw, 48px);
+      }
 
-        * {
-            box-sizing: border-box;
-        }
+      * {
+        box-sizing: border-box;
+      }
 
-        html {
-            scroll-behavior: smooth;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--background);
-            color: var(--text);
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            line-height: 1.65;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--background);
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+      }
 
-        img,
-        svg {
-            max-width: 100%;
-        }
+      img,
+      svg {
+        max-width: 100%;
+      }
 
-        h1,
-        h2,
-        h3,
-        p {
-            margin-top: 0;
-        }
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
 
-        h1 {
-            margin-bottom: 8px;
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            line-height: 1.25;
-            text-align: center;
-        }
+      h1 {
+        margin-bottom: 8px;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        line-height: 1.25;
+        text-align: center;
+      }
 
-        h1:hover {
-            text-decoration-line: underline;
-            text-decoration-style: wavy;
-            text-decoration-color: var(--accent);
-            text-underline-offset: 12px;
-        }
+      h1:hover {
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        text-decoration-color: var(--accent);
+        text-underline-offset: 12px;
+      }
 
-        h3 {
-            color: var(--text);
-            line-height: 1.4;
-        }
+      h3 {
+        color: var(--text);
+        line-height: 1.4;
+      }
 
-        a {
-            color: var(--text);
-            text-decoration: none;
-            text-underline-offset: 5px;
-        }
+      a {
+        color: var(--text);
+        text-decoration: none;
+        text-underline-offset: 5px;
+      }
 
-        a:hover,
-        a:focus-visible,
-        a:active {
-            text-decoration-line: underline;
-            text-decoration-style: wavy;
-            text-decoration-color: var(--accent);
-        }
+      a:hover,
+      a:focus-visible,
+      a:active {
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+        text-decoration-color: var(--accent);
+      }
 
-        a:focus-visible {
-            outline: 2px solid var(--accent);
-            outline-offset: 4px;
-        }
+      a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+      }
 
-        /* =================================
+      /* =================================
            2. PAGE CONTAINER
         ================================= */
 
-        .container {
-            width: min(
-                calc(100% - 2 * var(--page-padding)),
-                var(--content-width)
-            );
-            margin-inline: auto;
-        }
+      .container {
+        width: min(calc(100% - 2 * var(--page-padding)), var(--content-width));
+        margin-inline: auto;
+      }
 
-        /* =================================
+      /* =================================
            3. HEADER AND NAVIGATION
         ================================= */
 
-        .site-header {
-            padding-top: clamp(32px, 6vw, 72px);
-        }
+      .site-header {
+        padding-top: clamp(32px, 6vw, 72px);
+      }
 
-        .tagline {
-            margin-bottom: 20px;
-            color: var(--muted);
-            opacity: 0.7;
-            text-align: center;
-        }
+      .tagline {
+        margin-bottom: 20px;
+        color: var(--muted);
+        opacity: 0.7;
+        text-align: center;
+      }
 
-        .wvy {
-            color: var(--text);
-        }
+      .wvy {
+        color: var(--text);
+      }
 
-        .fade-in {
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
+      .fade-in {
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
 
-        .wvy:hover .fade-in,
-        .wvy:focus .fade-in {
-            opacity: 1;
-        }
+      .wvy:hover .fade-in,
+      .wvy:focus .fade-in {
+        opacity: 1;
+      }
 
-        .main-nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px 24px;
-            padding: 12px 0 20px;
-        }
+      .main-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px 24px;
+        padding: 12px 0 20px;
+      }
 
-        .main-nav a {
-            display: inline-block;
-            padding: 4px 0;
-        }
+      .main-nav a {
+        display: inline-block;
+        padding: 4px 0;
+      }
 
-        /* =================================
+      /* =================================
            4. INTERACTIVE WAVE LINES
         ================================= */
 
-        .wave-line {
-            display: block;
-            width: 100%;
-            height: 40px;
-            margin-block: 16px;
-            overflow: hidden;
-            cursor: crosshair;
-            touch-action: pan-y;
-        }
+      .wave-line {
+        display: block;
+        width: 100%;
+        height: 40px;
+        margin-block: 16px;
+        overflow: hidden;
+        cursor: crosshair;
+        touch-action: pan-y;
+      }
 
-        .wave-path {
-            fill: none;
-            stroke: var(--text);
-            stroke-width: 1.5;
-            vector-effect: non-scaling-stroke;
-        }
+      .wave-path {
+        fill: none;
+        stroke: var(--text);
+        stroke-width: 1.5;
+        vector-effect: non-scaling-stroke;
+      }
 
-        /* =================================
+      /* =================================
            5. INTRODUCTION AND PROFILE
         ================================= */
 
-        .intro {
-            display: grid;
-            grid-template-columns: minmax(180px, 300px) minmax(0, 1fr);
-            align-items: center;
-            gap: clamp(24px, 4vw, 48px);
-            padding-block: 24px 32px;
+      .intro {
+        display: grid;
+        grid-template-columns: minmax(180px, 300px) minmax(0, 1fr);
+        align-items: center;
+        gap: clamp(24px, 4vw, 48px);
+        padding-block: 24px 32px;
+      }
+
+      .myphoto {
+        text-align: center;
+      }
+
+      .hover-box {
+        display: inline-block;
+        padding: 4px;
+        border: 2px solid transparent;
+        cursor: pointer;
+      }
+
+      .profile-photo {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin: 8px auto 0;
+        border: 2px solid transparent;
+        object-fit: cover;
+        transition: border-color 0.25s ease;
+      }
+
+      /* Highlight the name and photograph together. */
+
+      .myphoto:hover .hover-box,
+      .myphoto:focus-within .hover-box {
+        border-color: var(--accent);
+      }
+
+      .myphoto:hover .profile-photo,
+      .myphoto:focus-within .profile-photo {
+        border-color: var(--accent);
+      }
+
+      .intro-text {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .intro-text p {
+        margin-bottom: 20px;
+      }
+
+      .intro-text p:last-child {
+        margin-bottom: 0;
+      }
+
+      .large-name {
+        font-size: 2em;
+      }
+
+      .colour-hover {
+        color: var(--text);
+        transition: color 0.3s ease;
+      }
+
+      .colour-hover:hover {
+        color: var(--accent);
+      }
+
+      .underline-hover:hover {
+        text-decoration: underline;
+      }
+
+      .vibrate:hover {
+        display: inline-block;
+        animation: vibrate 0.15s linear infinite;
+      }
+
+      @keyframes vibrate {
+        0% {
+          transform: translate(0);
         }
 
-        .myphoto {
-            text-align: center;
+        25% {
+          transform: translate(-2px, 2px);
         }
 
-        .hover-box {
-            display: inline-block;
-            padding: 4px;
-            border: 2px solid transparent;
-            cursor: pointer;
+        50% {
+          transform: translate(2px, -2px);
         }
 
-        .profile-photo {
-            display: block;
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            margin: 8px auto 0;
-            border: 2px solid transparent;
-            object-fit: cover;
-            transition: border-color 0.25s ease;
+        75% {
+          transform: translate(-2px, -2px);
         }
 
-        /* Highlight the name and photograph together. */
-
-        .myphoto:hover .hover-box,
-        .myphoto:focus-within .hover-box {
-            border-color: var(--accent);
+        100% {
+          transform: translate(2px, 2px);
         }
+      }
 
-        .myphoto:hover .profile-photo,
-        .myphoto:focus-within .profile-photo {
-            border-color: var(--accent);
-        }
-
-        .intro-text {
-            min-width: 0;
-            overflow-wrap: anywhere;
-        }
-
-        .intro-text p {
-            margin-bottom: 20px;
-        }
-
-        .intro-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        .large-name {
-            font-size: 2em;
-        }
-
-        .colour-hover {
-            color: var(--text);
-            transition: color 0.3s ease;
-        }
-
-        .colour-hover:hover {
-            color: var(--accent);
-        }
-
-        .underline-hover:hover {
-            text-decoration: underline;
-        }
-
-        .vibrate:hover {
-            display: inline-block;
-            animation: vibrate 0.15s linear infinite;
-        }
-
-        @keyframes vibrate {
-            0% {
-                transform: translate(0);
-            }
-
-            25% {
-                transform: translate(-2px, 2px);
-            }
-
-            50% {
-                transform: translate(2px, -2px);
-            }
-
-            75% {
-                transform: translate(-2px, -2px);
-            }
-
-            100% {
-                transform: translate(2px, 2px);
-            }
-        }
-
-        /* =================================
+      /* =================================
            6. WHITE INTRODUCTION STRIP
         ================================= */
 
-        .list-intro {
-            margin-block: 20px;
-            padding: 18px var(--page-padding);
-            background-color: var(--text);
-            color: var(--background);
-            text-align: center;
-        }
+      .list-intro {
+        margin-block: 20px;
+        padding: 18px var(--page-padding);
+        background-color: var(--text);
+        color: var(--background);
+        text-align: center;
+      }
 
-        .list-intro p {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+      .list-intro p {
+        max-width: 800px;
+        margin: 0 auto;
+      }
 
-        /* =================================
+      /* =================================
            7. PERSONAL PURSUITS
         ================================= */
 
-        .pursuits {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: clamp(24px, 5vw, 60px);
-            padding-block: 20px 32px;
-        }
+      .pursuits {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(24px, 5vw, 60px);
+        padding-block: 20px 32px;
+      }
 
-        .pursuits article {
-            min-width: 0;
-        }
+      .pursuits article {
+        min-width: 0;
+      }
 
-        .pursuits h3 {
-            margin-bottom: 14px;
-            font-size: clamp(1.2rem, 2.4vw, 1.5rem);
-        }
+      .pursuits h3 {
+        margin-bottom: 14px;
+        font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+      }
 
-        .pursuits ul {
-            padding-left: 24px;
-        }
+      .pursuits ul {
+        padding-left: 24px;
+      }
 
-        .pursuits li {
-            margin-bottom: 14px;
-            padding-left: 3px;
-        }
+      .pursuits li {
+        margin-bottom: 14px;
+        padding-left: 3px;
+      }
 
-        /* =================================
+      /* =================================
            8. FOOTER
         ================================= */
 
-        .site-footer {
-            padding-block: 20px 12px;
-            color: var(--text);
-            text-align: center;
-        }
+      .site-footer {
+        padding-block: 20px 12px;
+        color: var(--text);
+        text-align: center;
+      }
 
-        .site-footer p {
-            margin-bottom: 12px;
-        }
+      .site-footer p {
+        margin-bottom: 12px;
+      }
 
-        .copyright {
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
+      .copyright {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
 
-        /* =================================
+      /* =================================
            9. TABLET RESPONSIVENESS
         ================================= */
 
-        @media (max-width: 700px) {
-            .intro {
-                grid-template-columns: minmax(0, 1fr);
-                gap: 24px;
-            }
-
-            .profile-photo {
-                max-width: 240px;
-            }
-
-            .intro-text {
-                max-width: 600px;
-                margin-inline: auto;
-            }
-
-            .pursuits {
-                gap: 24px;
-            }
+      @media (max-width: 700px) {
+        .intro {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 24px;
         }
 
-        /* =================================
+        .profile-photo {
+          max-width: 240px;
+        }
+
+        .intro-text {
+          max-width: 600px;
+          margin-inline: auto;
+        }
+
+        .pursuits {
+          gap: 24px;
+        }
+      }
+
+      /* =================================
            10. MOBILE RESPONSIVENESS
         ================================= */
 
-        @media (max-width: 480px) {
-            body {
-                font-size: 16px;
-                line-height: 1.65;
-            }
-
-            .site-header {
-                padding-top: 32px;
-            }
-
-            .main-nav {
-                gap: 8px 18px;
-                padding-bottom: 12px;
-            }
-
-            .wave-line {
-                height: 32px;
-                margin-block: 12px;
-            }
-
-            .intro {
-                padding-block: 16px 24px;
-            }
-
-            .large-name {
-                font-size: 1.6em;
-            }
-
-            .pursuits {
-                grid-template-columns: minmax(0, 1fr);
-                gap: 18px;
-            }
-
-            .pursuits h3 {
-                margin-bottom: 10px;
-            }
-
-            .list-intro {
-                padding-block: 18px;
-            }
+      @media (max-width: 480px) {
+        body {
+          font-size: 16px;
+          line-height: 1.65;
         }
 
-        /* =================================
+        .site-header {
+          padding-top: 32px;
+        }
+
+        .main-nav {
+          gap: 8px 18px;
+          padding-bottom: 12px;
+        }
+
+        .wave-line {
+          height: 32px;
+          margin-block: 12px;
+        }
+
+        .intro {
+          padding-block: 16px 24px;
+        }
+
+        .large-name {
+          font-size: 1.6em;
+        }
+
+        .pursuits {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 18px;
+        }
+
+        .pursuits h3 {
+          margin-bottom: 10px;
+        }
+
+        .list-intro {
+          padding-block: 18px;
+        }
+      }
+
+      /* =================================
            11. REDUCED MOTION ACCESSIBILITY
         ================================= */
 
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
         }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body id="home">
-
+  <body id="home">
     <!-- =================================
          HEADER
     ================================== -->
 
     <header class="site-header container">
+      <h1>My not-so-first homepage. :)</h1>
 
-        <h1>My not-so-first homepage. :)</h1>
+      <p class="tagline">
+        Hover around with your cursor for some tiny elements of
+        <span class="wvy">
+          <span class="fade-in">SURPRISE</span> </span
+        >! :)
+      </p>
 
-        <p class="tagline">
-            Hover around with your cursor for some tiny elements of
-            <span class="wvy">
-                <span class="fade-in">SURPRISE</span>
-            </span>! :)
-        </p>
-
-        <nav class="main-nav" aria-label="Main navigation">
-            <a href="/">Home</a>
-            <a href="/Portfolio">Portfolio</a>
-            <a href="/SERVICES">Services</a>
-            <a href="/BLOG">Blog</a>
-        </nav>
-
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/Portfolio">Portfolio</a>
+        <a href="/SERVICES">Services</a>
+        <a href="/BLOG">Blog</a>
+      </nav>
     </header>
 
     <!-- =================================
@@ -455,14 +448,14 @@
     ================================== -->
 
     <div class="container">
-        <svg
-            class="wave-line"
-            viewBox="0 0 1000 40"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-        >
-            <path class="wave-path" d="M 0 20 H 1000"></path>
-        </svg>
+      <svg
+        class="wave-line"
+        viewBox="0 0 1000 40"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path class="wave-path" d="M 0 20 H 1000"></path>
+      </svg>
     </div>
 
     <!-- =================================
@@ -470,122 +463,101 @@
     ================================== -->
 
     <main>
+      <section class="intro container" aria-label="About me">
+        <div class="myphoto">
+          <span class="hover-box">Roshni</span>
 
-        <section class="intro container" aria-label="About me">
+          <img
+            class="profile-photo"
+            src="https://media.licdn.com/dms/image/v2/D4D03AQGUUvZs9yD_Hw/profile-displayphoto-scale_400_400/B4DaFE2xEIIoAg-/0/1792156570725?e=1793836800&v=beta&t=BnViYc-wmWwit4aKte5Qdb1bS98vds2lzmrSmVj9MWc"
+            alt="That's how I look!"
+            width="300"
+            height="300"
+            fetchpriority="high"
+          />
+        </div>
 
-            <div class="myphoto">
+        <div class="intro-text">
+          <p>
+            I've built a few first (<em><span class="vibrate">static</span></em
+            >) websites...
+          </p>
 
-                <span class="hover-box">Roshni</span>
+          <p>
+            My dad put me into coding courses when
+            <em>public internet</em> had just launched in India. But life
+            happened and sadly, I've no idea where those pieces of code are. :(
+          </p>
 
-                <img
-                    class="profile-photo"
-                    src="https://media.licdn.com/dms/image/v2/D4D03AQGUUvZs9yD_Hw/profile-displayphoto-scale_400_400/B4DaFE2xEIIoAg-/0/1792156570725?e=1793836800&v=beta&t=BnViYc-wmWwit4aKte5Qdb1bS98vds2lzmrSmVj9MWc"
-                    alt="That's how I look!"
-                    width="300"
-                    height="300"
-                    fetchpriority="high"
-                >
+          <p>
+            In adult life, this is probably my second attempt to start afresh.
+          </p>
 
-            </div>
+          <p>
+            Hi, I'm
+            <span class="hover-box">
+              <span class="colour-hover large-name">Roshni</span>
+            </span>
+            and since I was about 15, when public internet launched in India,
+            I've probably got some of the
+            <span class="underline-hover"><em>best</em></span>
+            Gmail IDs.. ;)
+          </p>
+        </div>
+      </section>
 
-            <div class="intro-text">
-
-                <p>
-                    I've built a few first
-                    (<em><span class="vibrate">static</span></em>)
-                    websites...
-                </p>
-
-                <p>
-                    My dad put me into coding courses when
-                    <em>public internet</em> had just launched in India.
-                    But life happened and sadly, I've no idea where those
-                    pieces of code are. :(
-                </p>
-
-                <p>
-                    In adult life, this is probably my second attempt
-                    to start afresh.
-                </p>
-
-                <p>
-                    Hi, I'm
-                    <span class="hover-box">
-                        <span class="colour-hover large-name">Roshni</span>
-                    </span>
-                    and since I was about 15, when public internet
-                    launched in India, I've probably got some of the
-                    <span class="underline-hover"><em>best</em></span>
-                    Gmail IDs.. ;)
-                </p>
-
-            </div>
-
-        </section>
-
-        <!-- =================================
+      <!-- =================================
              WHITE INTRODUCTION STRIP
         ================================== -->
 
-        <section class="list-intro">
+      <section class="list-intro">
+        <p>
+          In an attempt to use some of the HTML tags that I've learnt in this
+          course, below are some lists which in all probability may not interest
+          you at all!
+        </p>
+      </section>
 
-            <p>
-                In an attempt to use some of the HTML tags that I've
-                learnt in this course, below are some lists which in
-                all probability may not interest you at all!
-            </p>
-
-        </section>
-
-        <!-- =================================
+      <!-- =================================
              PERSONAL PURSUITS
         ================================== -->
 
-        <section class="pursuits container"
-                 aria-label="My personal pursuits">
+      <section class="pursuits container" aria-label="My personal pursuits">
+        <article>
+          <h3>
+            Pursuits that make me
+            <span class="colour-hover">happy</span> :)
+          </h3>
 
-            <article>
+          <ul>
+            <li>Badminton</li>
+            <li>Music (Listening, Playing and Singing)</li>
+            <li>Scrabble</li>
+          </ul>
+        </article>
 
-                <h3>
-                    Pursuits that make me
-                    <span class="colour-hover">happy</span> :)
-                </h3>
+        <article>
+          <h3>
+            Pursuits that
+            <span class="underline-hover">don't</span>
+            make me happy, yet I pursue them!
+          </h3>
 
-                <ul>
-                    <li>Badminton</li>
-                    <li>Music (Listening, Playing and Singing)</li>
-                    <li>Scrabble</li>
-                </ul>
+          <ul>
+            <li>
+              Running. (I am a
+              <em>half-marathoner</em> with <em>flat</em> feet!)
+            </li>
 
-            </article>
+            <li>Vacuuming the house!</li>
 
-            <article>
-
-                <h3>
-                    Pursuits that
-                    <span class="underline-hover">don't</span>
-                    make me happy, yet I pursue them!
-                </h3>
-
-                <ul>
-                    <li>
-                        Running. (I am a
-                        <em>half-marathoner</em> with
-                        <em>flat</em> feet!)
-                    </li>
-
-                    <li>Vacuuming the house!</li>
-
-                    <li>
-                        Mollycuddling my furry son to go out on walks
-                        when he doesn't want to go!
-                    </li>
-                </ul>
-
-            </article>
-
-        </section>
-
+            <li>
+              Mollycuddling my furry son to go out on walks when he doesn't want
+              to go!
+            </li>
+          </ul>
+        </article>
+      </section>
     </main>
 
     <!-- =================================
@@ -593,14 +565,14 @@
     ================================== -->
 
     <div class="container">
-        <svg
-            class="wave-line"
-            viewBox="0 0 1000 40"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-        >
-            <path class="wave-path" d="M 0 20 H 1000"></path>
-        </svg>
+      <svg
+        class="wave-line"
+        viewBox="0 0 1000 40"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path class="wave-path" d="M 0 20 H 1000"></path>
+      </svg>
     </div>
 
     <!-- =================================
@@ -608,24 +580,21 @@
     ================================== -->
 
     <footer class="site-footer container">
+      <p>
+        <em>
+          If I haven't got you disinterested yet, feel free to connect with me
+          on
+        </em>
 
-        <p>
-            <em>
-                If I haven't got you disinterested yet, feel free to
-                connect with me on
-            </em>
+        <a
+          href="https://www.linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >LinkedIn</a
+        >
+      </p>
 
-            <a
-                href="https://www.linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-            >LinkedIn</a>
-        </p>
-
-        <p class="copyright">
-            &copy; 2026 My Website
-        </p>
-
+      <p class="copyright">&copy; 2026 My Website</p>
     </footer>
 
     <!-- =================================
@@ -633,161 +602,143 @@
     ================================== -->
 
     <script>
-        (() => {
+      (() => {
+        const waveLines = document.querySelectorAll(".wave-line");
 
-            const waveLines = document.querySelectorAll(".wave-line");
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        );
 
-            const reducedMotion = window.matchMedia(
-                "(prefers-reduced-motion: reduce)"
-            );
+        if (reducedMotion.matches) return;
 
-            if (reducedMotion.matches) {
-                return;
+        waveLines.forEach((svg) => {
+          const path = svg.querySelector(".wave-path");
+
+          const WIDTH = 1000;
+          const CENTER_Y = 20;
+          const AMPLITUDE = 5;
+          const FREQUENCY = 0.045;
+          const SPEED = 650;
+          const LIFETIME = 1.8;
+          const SAMPLE_STEP = 4;
+          const MAX_SOURCES = 80;
+
+          let sources = [];
+          let lastX = null;
+          let animationId = null;
+
+          function addWave(clientX) {
+            const rect = svg.getBoundingClientRect();
+
+            if (!rect.width) return;
+
+            const x = ((clientX - rect.left) / rect.width) * WIDTH;
+            const now = performance.now() / 1000;
+
+            if (lastX === null || Math.abs(x - lastX) >= 3) {
+              sources.push({ x, time: now });
+
+              if (sources.length > MAX_SOURCES) {
+                sources.shift();
+              }
+
+              lastX = x;
             }
 
-            waveLines.forEach((svg) => {
+            if (animationId === null) {
+              animationId = requestAnimationFrame(draw);
+            }
+          }
 
-                const path = svg.querySelector(".wave-path");
+          function draw() {
+            const now = performance.now() / 1000;
 
-                const WIDTH = 1000;
-                const CENTER_Y = 20;
-                const AMPLITUDE = 5;
-                const FREQUENCY = 0.045;
-                const SPEED = 650;
-                const LIFETIME = 1.8;
-                const SAMPLE_STEP = 4;
-                const MAX_SOURCES = 80;
+            sources = sources.filter((source) => now - source.time < LIFETIME);
 
-                let sources = [];
-                let lastX = null;
-                let animationId = null;
+            const points = [];
 
-                function addWave(event) {
+            for (let x = 0; x <= WIDTH; x += SAMPLE_STEP) {
+              let y = CENTER_Y;
 
-                    // The effect is intended for a mouse,
-                    // not ordinary touchscreen scrolling.
-                    if (event.pointerType === "touch") {
-                        return;
-                    }
+              for (const source of sources) {
+                const elapsed = now - source.time;
+                const distance = Math.abs(x - source.x);
+                const phase = elapsed * SPEED - distance;
 
-                    const rect = svg.getBoundingClientRect();
+                if (phase >= 0) {
+                  const fade = Math.max(0, 1 - elapsed / LIFETIME);
 
-                    if (!rect.width) {
-                        return;
-                    }
+                  const front = Math.min(1, phase / 25);
 
-                    const x = (
-                        (event.clientX - rect.left) / rect.width
-                    ) * WIDTH;
-
-                    const now = performance.now() / 1000;
-
-                    // Create a new wave when the pointer moves
-                    // to a new position.
-                    if (
-                        lastX === null ||
-                        Math.abs(x - lastX) >= 3
-                    ) {
-
-                        sources.push({
-                            x: x,
-                            time: now
-                        });
-
-                        // Prevent too many simultaneous waves.
-                        if (sources.length > MAX_SOURCES) {
-                            sources.shift();
-                        }
-
-                        lastX = x;
-                    }
-
-                    if (animationId === null) {
-                        animationId = requestAnimationFrame(draw);
-                    }
+                  y += AMPLITUDE * Math.sin(phase * FREQUENCY) * front * fade;
                 }
+              }
 
-                function draw() {
+              points.push(`${x === 0 ? "M" : "L"} ${x} ${y}`);
+            }
 
-                    const now = performance.now() / 1000;
+            path.setAttribute("d", points.join(" "));
 
-                    // Remove expired wave sources.
-                    sources = sources.filter(
-                        source => now - source.time < LIFETIME
-                    );
+            if (sources.length > 0) {
+              animationId = requestAnimationFrame(draw);
+            } else {
+              path.setAttribute("d", `M 0 ${CENTER_Y} H ${WIDTH}`);
 
-                    const points = [];
+              animationId = null;
+              lastX = null;
+            }
+          }
 
-                    // Draw the combined wave.
-                    for (
-                        let x = 0;
-                        x <= WIDTH;
-                        x += SAMPLE_STEP
-                    ) {
+          // Desktop: mouse movement.
+          svg.addEventListener("pointermove", (event) => {
+            if (event.pointerType !== "touch") {
+              addWave(event.clientX);
+            }
+          });
 
-                        let y = CENTER_Y;
+          // Mobile: finger movement across the line.
+          svg.addEventListener(
+            "touchstart",
+            (event) => {
+              if (event.touches.length > 0) {
+                addWave(event.touches[0].clientX);
+              }
+            },
+            { passive: true },
+          );
 
-                        for (const source of sources) {
+          svg.addEventListener(
+            "touchmove",
+            (event) => {
+              if (event.touches.length > 0) {
+                addWave(event.touches[0].clientX);
+              }
+            },
+            { passive: true },
+          );
 
-                            const elapsed = now - source.time;
-                            const distance = Math.abs(x - source.x);
-                            const travelled = elapsed * SPEED;
-                            const phase = travelled - distance;
+          // Reset when the interaction ends.
+          svg.addEventListener("pointerleave", () => {
+            lastX = null;
+          });
 
-                            // The wave travels outwards in both directions.
-                            if (phase >= 0) {
+          svg.addEventListener(
+            "touchend",
+            () => {
+              lastX = null;
+            },
+            { passive: true },
+          );
 
-                                const fade = Math.max(
-                                    0,
-                                    1 - elapsed / LIFETIME
-                                );
-
-                                const front = Math.min(
-                                    1,
-                                    phase / 25
-                                );
-
-                                y += AMPLITUDE
-                                    * Math.sin(phase * FREQUENCY)
-                                    * front
-                                    * fade;
-                            }
-                        }
-
-                        points.push(
-                            `${x === 0 ? "M" : "L"} ${x} ${y}`
-                        );
-                    }
-
-                    path.setAttribute("d", points.join(" "));
-
-                    if (sources.length > 0) {
-
-                        animationId = requestAnimationFrame(draw);
-
-                    } else {
-
-                        // Return to a straight horizontal line.
-                        path.setAttribute(
-                            "d",
-                            `M 0 ${CENTER_Y} H ${WIDTH}`
-                        );
-
-                        animationId = null;
-                        lastX = null;
-                    }
-                }
-
-                svg.addEventListener("pointermove", addWave);
-
-                svg.addEventListener("pointerleave", () => {
-                    lastX = null;
-                });
-
-            });
-
-        })();
+          svg.addEventListener(
+            "touchcancel",
+            () => {
+              lastX = null;
+            },
+            { passive: true },
+          );
+        });
+      })();
     </script>
-
-</body>
+  </body>
 </html>
