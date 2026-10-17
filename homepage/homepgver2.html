@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Module-1 Project</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+  </head>
+
+  <style>
+    h1:hover {
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: yellow;
+      text-underline-offset: 8px;
+    }
+
+    h3 {
+      color: white;
+    }
+
+    body {
+      background-color: rgb(0, 0, 0);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a:focus,
+    nav a:active {
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: yellow;
+    }
+
+    .wvy {
+      color: white;
+      text-decoration: none;
+    }
+
+    .wvy:hover,
+    .wvy:focus,
+    .wvy:active {
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: yellow;
+    }
+
+    .underline-hover:hover {
+      text-decoration: underline;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: yellow;
+    }
+    .hover-box {
+      display: inline-block;
+      padding: 4px;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+
+    .profile-photo {
+      border: 2px solid transparent;
+    }
+
+    /* Highlight Roshni and the photo together */
+    body:has(.hover-box:hover) .hover-box {
+      border-color: yellow;
+    }
+
+    body:has(.hover-box:hover) .profile-photo {
+      border-color: yellow;
+    }
+
+    .vibrate:hover {
+      display: inline-block;
+      animation: vibrate 0.15s linear infinite;
+    }
+
+    @keyframes vibrate {
+      0% {
+        transform: translate(0);
+      }
+      25% {
+        transform: translate(-2px, 2px);
+      }
+      50% {
+        transform: translate(2px, -2px);
+      }
+      75% {
+        transform: translate(-2px, -2px);
+      }
+      100% {
+        transform: translate(2px, 2px);
+      }
+    }
+
+    .fade-in:hover {
+      opacity: 1;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .colour-hover {
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    .colour-hover:hover {
+      color: yellow;
+    }
+
+    .wave-line {
+      display: block;
+      width: 100%;
+      height: 40px;
+      cursor: crosshair;
+      overflow: visible;
+    }
+
+    .wave-path {
+      fill: none;
+      stroke: white;
+      stroke-width: 1.5;
+    }
+
+    td + td + td {
+      border-left: 0.5px solid white;
+    }
+
+    footer {
+      color: white;
+    }
+  </style>
+
+  <body>
+    <header>
+      <br /><br />
+      <h1 style="text-align: center; color: white">
+        My not-so-first homepage. :)
+      </h1>
+      <p style="text-align: center; color: lightgray; opacity: 0.6">
+        Hover around with your cursor for some tiny elements of
+        <span class="wvy"><span class="fade-in">SURPRISE</span></span
+        >! :)
+      </p>
+      <nav align="right" style="padding-right: 67px">
+        <a href="/">Home</a> | <a href="/Portfolio">Portfolio</a> |
+        <a href="/SERVICES">Services</a> | <a href="/BLOG">Blog</a> |
+      </nav>
+    </header>
+    <br />
+    <br />
+
+    <svg class="wave-line" viewBox="0 0 1000 40" preserveAspectRatio="none">
+      <path class="wave-path" d="M 0 20 H 1000" />
+    </svg>
+
+    <div style="padding-left: 40px">
+      <table style="border: none; border-collapse: collapse">
+        <tr style="border: none">
+          <td style="padding-top: 10px; background-color: black; border: none">
+            <div class="myphoto">
+              <span class="hover-word">Roshni</span>
+              <img
+                class="profile-photo"
+                src="https://media.licdn.com/dms/image/v2/D4D03AQGUUvZs9yD_Hw/profile-displayphoto-scale_400_400/B4DaFE2xEIIoAg-/0/1792156570725?e=1793836800&v=beta&t=BnViYc-wmWwit4aKte5Qdb1bS98vds2lzmrSmVj9MWc"
+                alt="That's how I look!"
+                width="300"
+                height="300"
+              />
+            </div>
+          </td>
+          <td
+            style="
+              padding-left: 20px;
+              padding-right: 20px;
+              background-color: black;
+              border: none;
+            "
+          >
+            <p style="color: white">
+              I've built a few first (<em
+                ><span class="vibrate">static</span></em
+              >) websites... <br />
+              <br />
+              My dad put me into coding courses when
+              <em>public internet</em> had just launched in India. But life
+              happened and sadly, I've no idea where those pieces of code are.
+              :( <br /><br />
+              In adult life, this is probably my second attempt to start afresh.
+              <br />
+              <br />
+              Hi, I'm
+              <span class="hover-box"
+                ><span class="colour-hover"
+                  ><span style="font-size: 32px">Roshni</span></span
+                ></span
+              >
+              and since I was about 15, when public internet launched in India,
+              I've probably got some of the
+              <span class="underline-hover"> <em> best</em></span>
+              gmail ids.. ;)
+            </p>
+          </td>
+
+          <td style="background-color: black; border: none">
+            <p>ababababababa</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div
+      style="
+        padding-left: 40px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: white;
+      "
+    >
+      <p align="center">
+        In an attempt to use some of the html tags that I've learnt in this
+        course, below are some lists which in all probability may not interest
+        you at all!
+      </p>
+    </div>
+    <br />
+    <div style="padding-left: 100px">
+      <table style="width: 60%; table-layout: fixed">
+        <tr>
+          <td></td>
+          <td>
+            <h3 style="padding-left: 40px">
+              Pursuits that make me <span class="colour-hover">happy</span> :)
+            </h3>
+          </td>
+          <td>
+            <h3 style="padding-left: 20px">
+              Pursuits that
+              <span class="underline-hover">don't </span>make me happy, yet I
+              pursue them!
+            </h3>
+          </td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td style="color: white">
+            <ul>
+              <li>Badminton</li>
+              <br />
+              <li>Music ( Listening, Playing and Singing)</li>
+              <br />
+              <li>Scrabble</li>
+            </ul>
+          </td>
+
+          <td style="color: white">
+            <ul>
+              <li>
+                Running. (I am a <em>half-marathoner</em> with
+                <em>flat</em> feet! )
+              </li>
+              <li>Vacuuming the house!</li>
+              <li>
+                Mollycuddling my furry son to go out on walks when he doesn't
+                want to go!
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <hr style="border: none; height: 0.5px; background-color: white" />
+
+    <script>
+      document.querySelectorAll(".wave-line").forEach((svg) => {
+        const path = svg.querySelector(".wave-path");
+        const width = 1000;
+        const centerY = 20;
+        const amplitude = 5;
+        const frequency = 0.045;
+        const speed = 650;
+        const lifetime = 1.8;
+
+        let sources = [];
+        let lastX = null;
+        let lastTime = 0;
+        let animationId = null;
+
+        function addWave(event) {
+          const rect = svg.getBoundingClientRect();
+          const x = ((event.clientX - rect.left) / rect.width) * width;
+          const now = performance.now() / 1000;
+
+          // Start a fresh wave at each new cursor position.
+          if (lastX === null || Math.abs(x - lastX) >= 3) {
+            sources.push({ x, time: now });
+            lastX = x;
+            lastTime = now;
+          }
+
+          if (!animationId) {
+            animationId = requestAnimationFrame(draw);
+          }
+        }
+
+        function draw() {
+          const now = performance.now() / 1000;
+
+          sources = sources.filter((source) => now - source.time < lifetime);
+
+          let d = "";
+
+          for (let x = 0; x <= width; x += 2) {
+            let y = centerY;
+
+            for (const source of sources) {
+              const distance = Math.abs(x - source.x);
+              const elapsed = now - source.time;
+              const travelled = elapsed * speed;
+
+              // Each wave expands in both directions.
+              const phase = travelled - distance;
+
+              if (phase >= 0) {
+                const fade = Math.max(0, 1 - elapsed / lifetime);
+
+                const front = Math.min(1, phase / 25);
+
+                y += amplitude * Math.sin(phase * frequency) * front * fade;
+              }
+            }
+
+            d += `${x === 0 ? "M" : "L"} ${x} ${y} `;
+          }
+
+          path.setAttribute("d", d);
+
+          if (sources.length > 0) {
+            animationId = requestAnimationFrame(draw);
+          } else {
+            path.setAttribute("d", `M 0 ${centerY} H ${width}`);
+            animationId = null;
+            lastX = null;
+          }
+        }
+
+        svg.addEventListener("pointermove", addWave);
+
+        svg.addEventListener("pointerleave", () => {
+          lastX = null;
+        });
+      });
+    </script>
+
+    <div style="padding-left: 0px">
+      <p align="center" , style="color: white">
+        <em
+          >If I haven't got you disinterested yet, feel free to connect with me
+          on</em
+        >
+        <a href="https://www.linkedin.com" target="_blank">Linkedin</a>
+      </p>
+    </div>
+
+    <footer>
+      <p align="right" , style="padding-right: 67px">&copy; 2026 My Website</p>
+    </footer>
+  </body>
+</html>
