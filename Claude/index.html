@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1 id="greeting">Hello</h1>
+
+    <svg id="pineapple" viewBox="0 0 200 300" width="220" role="img" aria-label="Pineapple">
+      <!-- crown leaves -->
+      <g class="leaves">
+        <path d="M100 100 C70 70 60 40 75 10 C90 40 98 60 100 100Z" fill="#2e8b3d"/>
+        <path d="M100 100 C130 70 140 40 125 10 C110 40 102 60 100 100Z" fill="#2e8b3d"/>
+        <path d="M100 100 C55 85 30 60 25 35 C60 45 85 65 100 100Z" fill="#3fa84f"/>
+        <path d="M100 100 C145 85 170 60 175 35 C140 45 115 65 100 100Z" fill="#3fa84f"/>
+        <path d="M100 100 C90 60 95 20 100 0 C105 20 110 60 100 100Z" fill="#46b957"/>
+      </g>
+      <!-- body -->
+      <ellipse cx="100" cy="190" rx="65" ry="95" fill="#f7b92b" stroke="#c98a0b" stroke-width="4"/>
+      <!-- diamond pattern -->
+      <g stroke="#c98a0b" stroke-width="3" fill="none" clip-path="url(#body)">
+        <path d="M20 110 L180 270 M20 150 L150 280 M20 190 L110 280 M50 100 L180 230 M90 100 L180 190"/>
+        <path d="M180 110 L20 270 M180 150 L50 280 M180 190 L90 280 M150 100 L20 230 M110 100 L20 190"/>
+      </g>
+      <clipPath id="body"><ellipse cx="100" cy="190" rx="65" ry="95"/></clipPath>
+    </svg>
+
+    <button id="btn">Say hi</button>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
